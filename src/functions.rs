@@ -82,7 +82,7 @@ impl MembershipFactory {
 ///
 /// ```rust
 /// use fuzzy_logic::{
-///     functions::{DefuzzFactory, MembershipFactory,
+///     functions::{DefuzzFactory, MembershipFactory},
 ///     set::Set
 /// };
 ///

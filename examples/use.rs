@@ -89,7 +89,11 @@ fn main() {
     .into_iter()
     .collect();
 
+
     inference.update(input);
+
+    dbg!(&inference);
+    
     // NB of x_dest
     // NS of x
     // Expected: NS

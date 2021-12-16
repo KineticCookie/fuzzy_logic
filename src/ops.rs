@@ -4,10 +4,10 @@
 //!
 //! User can implement his own operations by implementing `LogicOps` or `SetOps` traits.
 use crate::set::Set;
-use std::{cell::RefCell, collections::HashMap};
+use std::{cell::RefCell, collections::HashMap, fmt::Debug};
 
 /// Abstraction over set operations. Doesn't contain default implementation.
-pub trait SetOps {
+pub trait SetOps: Debug {
     /// Union of fuzzy sets.
     fn union(&self, left: &mut Set, right: &mut Set) -> Set;
     /// Intersection of fuzzy sets.
@@ -15,6 +15,7 @@ pub trait SetOps {
 }
 
 /// Implementation of commonly used minimax set operations.
+#[derive(Debug)]
 pub struct MinMaxOps;
 
 impl SetOps for MinMaxOps {
@@ -59,7 +60,7 @@ impl SetOps for MinMaxOps {
 }
 
 /// Abstraction over fuzzy logic operations. Doesn't contain default implementation.
-pub trait LogicOps {
+pub trait LogicOps: Debug {
     /// Fuzzy logic AND operation.
     fn and(&self, left: f32, right: f32) -> f32;
     /// Fuzzy logic OR operation.
@@ -69,6 +70,7 @@ pub trait LogicOps {
 }
 
 /// Implementation of commonly used Zadeh fuzzy logic operations.
+#[derive(Debug)]
 pub struct ZadehOps;
 
 impl LogicOps for ZadehOps {
