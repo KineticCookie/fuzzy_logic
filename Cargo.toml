@@ -3,5 +3,10 @@ name = "fuzzy_logic"
 version = "0.3.0"
 authors = ["Lutfullin Bulat <lb6557@gmail.com>"]
 
+edition = "2021"
+
 [dependencies]
 ordered-float = {version = "0.2.0", git = "https://github.com/AerialX/rust-ordered-float.git", rev="3aa8aa506b3231712958093ee513b37206a474da"}
+
+[dev-dependencies]
+approx = "0.5"

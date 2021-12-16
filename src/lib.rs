@@ -6,13 +6,17 @@
 //!
 //! User is available to implement his own functions and operations.
 pub mod functions;
-pub mod set;
+pub mod inference;
 pub mod ops;
 pub mod rules;
-pub mod inference;
+pub mod set;
 
 #[cfg(test)]
 mod test {
+    use crate::functions::MembershipFactory;
     #[test]
-    fn it_works() {}
+    fn fuzzy_logic() {
+        let mem = MembershipFactory::triangular(-15.0, -15.0, 22.0);
+        mem(-15.0); // -> 1.0
+    }
 }
